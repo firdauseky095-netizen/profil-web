@@ -7,15 +7,26 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    background-color: #eee;
     margin: 0;
+}
+
+/* SCROLL SNAP */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-snap-type: y mandatory;
 }
 
 /* NAVBAR */
 .navbar {
-    background: #333;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
     padding: 15px;
     text-align: center;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -30,10 +41,20 @@ body {
     color: #00eaff;
 }
 
+/* SEMUA SECTION */
+.section, .header {
+    min-height: 100vh;
+    scroll-snap-align: start;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* HEADER */
 .header {
     text-align: center;
-    padding: 100px 20px;
 
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
@@ -49,13 +70,11 @@ body {
 .header img {
     width: 120px;
     border-radius: 50%;
-    margin-bottom: 15px;
     border: 3px solid white;
 }
 
 .header h1 {
-    font-size: 40px;
-    margin: 10px 0;
+    font-size: 45px;
     text-shadow: 2px 2px 6px black;
 }
 
@@ -63,19 +82,18 @@ body {
     text-shadow: 1px 1px 4px black;
 }
 
-/* SECTION */
-.section {
-    padding: 30px;
+/* PROFIL */
+#profil {
+    background: #f5f5f5;
 }
 
-/* CONTAINER */
 .container {
     display: flex;
-    justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* CARD */
 .card {
     background: white;
     padding: 20px;
@@ -83,7 +101,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
-    animation: fadeIn 1.5s ease;
     transition: 0.3s;
 }
 
@@ -91,23 +108,18 @@ body {
     transform: translateY(-10px);
 }
 
-/* SPAN */
-.highlight {
-    color: #00eaff;
-    font-weight: bold;
-    font-size: 20px;
-    text-shadow: 1px 1px 4px black;
+/* KONTAK */
+#kontak {
+    background: #222;
+    color: white;
 }
 
-/* FORM */
 form {
     background: white;
+    color: black;
     padding: 20px;
     width: 300px;
-    margin: auto;
     border-radius: 10px;
-
-    animation: fadeIn 2s ease;
 }
 
 input, textarea {
@@ -120,19 +132,23 @@ input[type="submit"] {
     background: #00eaff;
     border: none;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 input[type="submit"]:hover {
     background: #0099cc;
-    transform: scale(1.05);
+}
+
+/* TEXT */
+.highlight {
+    color: #00eaff;
+    font-weight: bold;
 }
 
 /* ANIMASI */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -162,13 +178,12 @@ input[type="submit"]:hover {
 
 <!-- PROFIL -->
 <div id="profil" class="section">
-    <h2 align="center">Profil Saya</h2>
+    <h2>Profil Saya</h2>
 
     <div class="container">
-
         <div class="card">
             <h3>Tentang Saya</h3>
-            <p>Saya adalah mahasiswa informatika yang sedang belajar web development.</p>
+            <p>Saya mahasiswa informatika yang sedang belajar web development.</p>
         </div>
 
         <div class="card">
@@ -183,34 +198,22 @@ input[type="submit"]:hover {
         <div class="card">
             <h3>Skill</h3>
             <ul>
-                <li>HTML Dasar</li>
-                <li>Desain Grafis</li>
-                <li>Editing Video</li>
+                <li>HTML</li>
+                <li>Desain</li>
+                <li>Editing</li>
             </ul>
         </div>
-
     </div>
-
-    <p align="center">
-        Kunjungi Instagram saya:
-        <a href="https://www.instagram.com/arek_058" target="_blank">Klik di sini</a>
-    </p>
 </div>
 
 <!-- KONTAK -->
 <div id="kontak" class="section">
-    <h2 align="center">Kontak Saya</h2>
+    <h2>Kontak Saya</h2>
 
     <form>
-        <label>Nama:</label>
-        <input type="text" placeholder="Dwi Ahmad Firdaus">
-
-        <label>Email:</label>
-        <input type="email" placeholder="firdauseky095@gmail.com">
-
-        <label>Pesan:</label>
-        <textarea placeholder="082279972014"></textarea>
-
+        <input type="text" placeholder="Nama">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Pesan"></textarea>
         <input type="submit" value="Kirim">
     </form>
 </div>
