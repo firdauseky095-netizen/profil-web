@@ -2,7 +2,11 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profil Mahasiswa Informatika</title>
+
+<!-- ICON -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
@@ -10,7 +14,7 @@ body {
     margin: 0;
 }
 
-/* SCROLL SNAP */
+/* SCROLL */
 html {
     scroll-behavior: smooth;
 }
@@ -41,7 +45,7 @@ body {
     color: #00eaff;
 }
 
-/* SEMUA SECTION */
+/* SECTION */
 .section, .header {
     min-height: 100vh;
     scroll-snap-align: start;
@@ -55,15 +59,11 @@ body {
 /* HEADER */
 .header {
     text-align: center;
-
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
-
     background-size: cover;
     background-position: center;
-
     color: white;
-
     animation: fadeIn 1.5s ease;
 }
 
@@ -100,12 +100,57 @@ body {
     width: 250px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
+}
+
+/* SOSIAL MEDIA */
+.social {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeIn 1.5s ease;
+}
+
+.social p {
+    font-size: 18px;
+}
+
+.ig-btn, .fb-btn {
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    color: white;
+    transition: 0.3s;
+}
+
+/* IG */
+.ig-btn {
+    background: linear-gradient(45deg, #E1306C, #F77737);
+}
+
+.ig-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #E1306C;
+}
+
+/* FB */
+.fb-btn {
+    background: #1877F2;
+}
+
+.fb-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #1877F2;
+}
+
+.social i {
+    margin-right: 8px;
 }
 
 /* KONTAK */
@@ -153,6 +198,21 @@ input[type="submit"]:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    form {
+        width: 90%;
     }
 }
 </style>
@@ -204,6 +264,20 @@ input[type="submit"]:hover {
             </ul>
         </div>
     </div>
+
+    <!-- SOSIAL MEDIA -->
+    <div class="social">
+        <p>Ikuti saya di:</p>
+
+        <a href="https://www.instagram.com/arek_058" target="_blank" class="ig-btn">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://www.facebook.com/share/1AwuqbTPiU/" target="_blank" class="fb-btn">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+    </div>
+
 </div>
 
 <!-- KONTAK -->
